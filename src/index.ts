@@ -114,14 +114,14 @@ function createCylinder() {
   cylinder.userData.name = 'CYLINDER'
 }
 
-function createCastle () {
+function createCastle (posX=-15,posZ=-15) {
   const objLoader = new OBJLoader();
 
   objLoader.loadAsync('./castle.obj').then((group) => {
     const castle = group.children[0];
 
-    castle.position.x = -15
-    castle.position.z = -15
+    castle.position.x = posX
+    castle.position.z = posZ
 
     castle.scale.x = 5;
     castle.scale.y = 5;
@@ -194,5 +194,6 @@ createBox()
 createSphere()
 createCylinder()
 createCastle()
+createCastle(30,30)
 
 animate()
